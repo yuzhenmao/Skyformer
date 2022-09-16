@@ -52,7 +52,8 @@ def step_LRA(model, optimizer, lr_scheduler, ds_iter,amp_scaler,
 
     _, batch = next(ds_iter[component])
     for key in batch:
-        batch[key] = batch[key].cuda()
+        if component != 'test':
+            batch[key] = batch[key].cuda()
 
     if component == "train":
         outputs = {}
@@ -250,7 +251,7 @@ def main():
         model = ModelForSC(model_config)
 
 
-    checkpoint_dir = './checkpoints-{}'.format(args.random)
+    checkpoint_dir = './{}-checkpoints-{}'.format(args.task, args.random)
     if not os.path.exists(checkpoint_dir):
         os.mkdir(checkpoint_dir)
     checkpoint_path = os.path.join(checkpoint_dir, '{}.{}.model'.format(args.checkpoint, args.random))
@@ -261,7 +262,8 @@ def main():
         print("model loaded from: " + checkpoint_path)
 
 
-    model = model.cuda()
+    if args.mode == 'train':
+        model = model.cuda()
     print(model)
     print(f"parameter_size: {[weight.size() for weight in model.parameters()]}", flush = True)
     print(f"num_parameter: {np.sum([np.prod(weight.size()) for weight in model.parameters()])}", flush = True)
