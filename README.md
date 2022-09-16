@@ -1,8 +1,8 @@
-# Skyformer
+# Transformer Baselines
 
-This repository is the official implementation of [Skyformer: Remodel Self-Attention with Gaussian Kernel and Nystr\"om Method](https://arxiv.org/abs/2111.00035) (NeurIPS 2021). 
+## This repository is originally the official implementation of [Skyformer: Remodel Self-Attention with Gaussian Kernel and Nystr\"om Method](https://arxiv.org/abs/2111.00035) (NeurIPS 2021). Thanks to the original author!
 
-![image](/doc/Skyformer_model.jpg)
+Here, I use this repo as a Transformer baseline to test my own method
 
 
 ## Requirements
