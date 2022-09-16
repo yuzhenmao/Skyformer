@@ -100,7 +100,7 @@ pathfinder = {
 
     }
 }
-retrieva l ={
+retrieval ={
     "dataset" :{
         "train" :147086,
         "dev" :18090,
@@ -151,7 +151,7 @@ retrieva l ={
         "reformer" :{"bz_rate" :1 ,"num_hash" :2},
     }
 }
-tex t ={
+text ={
     "dataset" :{
         "train" :25000,
         "dev" :25000,
@@ -164,7 +164,7 @@ tex t ={
         "transformer_dim" :256,
         "transformer_hidden_dim" :1024,
         "head_dim" :256,
-        "num_head" :4,
+        "num_head" :2,
         "num_layers" :2,
         "vocab_size" :512,
         "max_seq_len" :4000,
@@ -203,7 +203,7 @@ tex t ={
 }
 
 
-imag e ={
+image ={
     "dataset" :{
         "train" :45000,
         "dev" :5000,
